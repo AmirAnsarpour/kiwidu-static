@@ -1,28 +1,14 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"); */
-/* Archivo Black */
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
-/* Michroma */
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); */
-/* Poppins */
-/* @import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"); */
-/* Lilita One */
+/* Importing Inter font - a clean, minimalist typeface */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 body {
-  font-family: "Michroma", sans-serif;
+  font-family: "Inter", sans-serif;
+  color: #333;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
+/* Clean selection styling */
 ::-moz-selection {
   color: white;
   background: black;
@@ -33,32 +19,166 @@ body {
   background: black;
 }
 
+/* Minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  background: #f2f2f2;
+  width: 4px;
+  background: #f8f8f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: black;
-  border-radius: 6px;
-  border: 2px solid #f2f2f2;
+  background: #333;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #555;
+}
+
+/* Subtle animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .float-animation {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
+/* Refined scroll reveal animation */
 .scroll-reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1),
-    transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 0, 0, 1),
+    transform 1s cubic-bezier(0.2, 0, 0, 1);
 }
+
 .scroll-reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Minimalist card styling */
+.minimal-card {
+  border: none;
+  background: transparent;
+  padding: 1.5rem 0;
+  transition: transform 0.3s ease;
+}
+
+.minimal-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Clean button styling */
+.minimal-button {
+  border: 1px solid #333;
+  background: transparent;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.minimal-button:hover {
+  background: #333;
+  color: white;
+}
+
+.minimal-button-filled {
+  background: #333;
+  color: white;
+  border: 1px solid #333;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.minimal-button-filled:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+
+.minimal-button-filled:hover {
+  color: #333;
+}
+
+.minimal-button-filled:hover:before {
+  left: 0;
+}
+
+/* Waitlist button specific styling */
+.waitlist-button {
+  padding: 0.85rem 2rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+}
+
+.waitlist-button:hover {
+  /* transform: translateY(-2px); */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Waitlist form styling */
+.waitlist-form-container {
+  position: relative;
+  max-width: 500px;
+}
+
+.waitlist-input {
+  border: none;
+  border-bottom: 1px solid #333;
+  background: transparent;
+  padding: 0.85rem 0;
+  width: 100%;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.waitlist-input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.waitlist-input::placeholder {
+  color: #999;
+  font-weight: 300;
+}
+
+/* Minimalist form styling */
+.minimal-input {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  border-radius: 0;
+  padding: 0.75rem 0;
+  transition: border-color 0.3s ease;
+}
+
+.minimal-input:focus {
+  outline: none;
+  border-color: #333;
 }
